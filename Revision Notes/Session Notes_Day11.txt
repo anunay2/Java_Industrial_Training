@@ -1,0 +1,42 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (26/08/2020)
+
+1. StandUp Call - Done
+
+2. Object Oriented Analysis Design (OOAD) 
+
+3. Unified Modelling Language (UML)
+
+
+Object-oriented analysis and design (OOAD) is a software 
+engineering approach. 
+It models a system as a group of interacting objects. 
+Each object represents some entity in the system being modeled.
+and is characterised by its class, its state (data elements), 
+and its behavior. 
+
+Object-oriented analysis (OOA) applies object-modelling techniques to 
+analyze the functional requirements for a system.
+OOA focuses on what the system does.
+
+
+Object-oriented design (OOD) elaborates the analysis models to 
+produce implementation specifications. 
+OOD on how the system does it.
+
+Association
+Patient - Doctor
+Shopkeeper - Customer
+
+
+Library - Books
+
+Generalization is a mechanism for combining similar classes of 
+objects into a single, more general class. 
+Generalization identifies commonalities among a set of entities. 
+The commonality may be of attributes, behavior, or both. 
+
+Specialization is the reverse process of Generalization means 
+creating new sub-classes from an existing class.

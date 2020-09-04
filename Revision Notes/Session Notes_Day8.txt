@@ -1,0 +1,195 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (21/08/2020)
+
+1. StandUp Call
+
+    Queries resolved - Done
+
+2. Enum in Java
+
+3. static 
+
+4. Date Time API in Java
+
+5. Quiz
+
+
+
+
+Enum
+
+Enum improves type safety
+Enum can be easily used in switch
+Enum can be traversed
+Enum can have fields, constructors and methods
+Enum may implement many interfaces but cannot extend any class 
+because it internally extends Enum class
+
+All enums implicitly extend java.lang.Enum. 
+We can not assign any value other than specified in Enum 
+Constants.
+We can specify values of enum constants at the creation time. 
+MyEnum.values() returns an array of MyEnum’s values.
+Enum constants are implicitly static and final and 
+can not be changed once created.
+can not create instance of enums by using new operator in Java 
+because constructor of Enum in Java can only be private 
+Enums constants can only be created inside Enums itself.
+An enum can be declared outside or inside a class, 
+but NOT in a method.
+
+Example
+
+public class EnumExample {
+    public enum ProgrammingLanguage {
+        BASIC, COBOL, FORTRAN, JAVA, DOTNET;
+    }
+
+    ProgrammingLanguage pl;
+
+    public EnumExample(ProgrammingLanguage pl) {
+        this.pl = pl;
+    }
+
+
+    public void getLanguageType() {
+        switch (pl) {
+            case BASIC:
+                System.out.println("Beginners All purpose Symbolic Instruction Code");
+                break;
+
+            case COBOL:
+                System.out.println("Common Business Oriented Language");
+                break;
+
+            case FORTRAN:
+                System.out.println("Formula Translation");
+                break;
+
+            case JAVA:
+            case DOTNET:
+                System.out.println("Object Oriented Programming Language");
+                break;
+
+            default:
+                System.out.println("Its a new concept, waiting for approval.");
+                break;
+        }
+
+
+    }
+
+    public static void main(String[] args) {
+        EnumExample ee = new EnumExample(ProgrammingLanguage.BASIC);
+        ee.getLanguageType();
+        System.out.println(ProgrammingLanguage.COBOL);
+        EnumExample ee1 = new EnumExample(ProgrammingLanguage.JAVA);
+        ee1.getLanguageType();
+    }
+}
+
+static
+
+static variable can be shared across multiple methods in a class.
+static variables are accessible only by static methods.
+static methods can be called without an object
+static variables are accessible using the classname.
+static block get executed before the main method.
+java supports multiple static blocks within the class.
+
+Example :
+
+public class StaticExample {
+
+    static int x;
+
+    static {
+        System.out.println("This is the first static block");
+    }
+
+    static int product(int x){
+        int result = 5 * x;
+        return result;
+    }
+
+    static {
+        System.out.println("This is my second static block");
+    }
+
+    public void displayMessage(){
+        System.out.println("Learning static keywords in Java");
+    }
+
+    public static void main(String[] args) {
+        int prod = product(25);
+        System.out.println(prod);
+        StaticExample.x=45;
+        System.out.println("x:= "+x);
+        int num1= StaticExample.product(60);
+        System.out.println(num1);
+    
+    }
+
+}
+
+Date-Time API in java
+
+Example :
+
+/* LocalDate currentDate = LocalDate.now();
+System.out.println("Current Date is: " + currentDate);*/
+
+/* LocalDate localDate = LocalDate.of(2020, Month.AUGUST, 18);
+System.out.println(localDate);*/
+
+/*LocalDate localDate = LocalDate.of(2019, 12, 14);
+System.out.println(localDate);*/
+/*LocalTime localTime = LocalTime.of(10,30, 44);
+System.out.println(localTime);*/
+
+/* LocalDateTime currentDateTime = LocalDateTime.now();
+System.out.println("Current Date and Time is: " + currentDateTime);*/
+
+/* ZoneId neyYork = ZoneId.of("America/New_York");
+ZonedDateTime newyyorkDateTime = ZonedDateTime.of(LocalDateTime.of(2020, 01, 10, 12, 0), neyYork);
+System.out.println(newyyorkDateTime);*/
+
+ZoneOffset offset = ZoneOffset.of("+03:00");
+OffsetDateTime plusThree = OffsetDateTime.of(LocalDateTime.of(2020,Month.AUGUST,21,16,30,55),offset);
+System.out.println(plusThree);
+
+
+Regular Expression
+
+ public static void main(String[] args) {
+    String pan;
+     Scanner scn = new Scanner(System.in);
+	 System.out.println("Enter Pan Number");
+     pan = scn.next();
+     boolean b = isValidCard(pan);
+	 System.out.println(b);
+}
+
+    public static boolean isValidCard(String pan) {
+
+        String regex = "[A-Z a-z]{5}[0-9]{4}[A-Z]{1}";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(pan);
+        return m.matches();
+    }
+
+
+Assignment urls
+
+https://gitlab-cgi.stackroute.in/stack_java_cycle1_exercises/exercise-bt-loops-foreach
+https://gitlab-cgi.stackroute.in/stack_jfse_prereq_corejavads_exercises/exercise-bt-common-java-classes-wrapper-classes
+https://gitlab-cgi.stackroute.in/stack_java_cycle3_exercises/exercise-bt-common-java-classes-date-time
+
+
+
+Tomorrow's Session
+
+OOPs
+

@@ -1,0 +1,139 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (13/08/2020)
+
+1. StandUp Call - Done
+
+2. Git Operation (contd...)
+   To get the repo from the remote to local
+   Step-1 : Type gitlab-cgi.stackroute.in url
+   Step-2 : Enter your credentails
+   Step-3 : Create a New Project
+   Step-4 : Select clone drop-down - https url
+   Step-5 : goto Terminal if unix, or cmd if Windows
+   Step-6 : select the folder for repo to be cloned
+   Step-7 : In the Terminal  git clone <url>
+          git clone https://gitlab-cgi.stackroute.in/Shankar/day2project.git
+   Step-8 : cd repo folder
+   Step-9 : create a new file
+   Step-10 : git status
+   Step-11 : git add .
+   Step-12 : git status
+   Step-13 : git commit -m "initial commit"
+   Step-14 : git push origin master
+   
+
+3. Problem Solving Techniques
+     Ways of Analaysing the problems
+	    - Root cause Analysis : 
+		                  Find the root cause for the problem
+						  Treat the root cause with proper solution 
+		- Fish Bone Diagram
+		               All the causes leading to the Problem
+					    must be noted
+					  Analyse the causes to find a better
+					    solution.
+					  Over all look of the diagram will 
+					   like Fish Bone
+		 
+		- 5 Whys ?
+		            Raise Queries for the problem
+4. Algorithms
+          
+What is an algorithms?
+
+It is a finite sequence of well-defined 
+		     computer-implementable instructions.
+  It is a step by step procedure to solve a logical
+		      or mathematical problem.
+			
+Process of Algorithm Development
+    
+	Step-1 : Obtain description of Problem
+	Step-2 : Analyse the problem statement
+	Step-3 : Develop a High level algorithm
+	Step-4 : Refine the algorithm by adding more details
+	Step-5 : Review the algorithm 
+	
+Characteristics of algorithms
+
+    1) Well-defined inputs
+	2) Well-defined outputs
+	3) Clear and unambigous
+	4) Finiteness
+	5) Langauge independant
+	6) Feasible
+
+Algorithm for withdrawing money from ATM
+lgorithm
+Step-1 : Insert Card
+Step-2 : Select Language
+Step-3 : Enter 4 digit PIN
+Step-4 : Enter the type of Transaction
+Step-5 : Enter the amount to be withdrawn
+Step-6 : Collect the cash
+Step-7 : Receipt to be collected
+
+Exercises (Will be discussed tomorrow during stand-up)
+ 1) Algorithm to prepare Biscuits
+ 2) Algorithm for Online shopping
+ 
+ 
+5. Flowcharts 
+   
+   A pictorial represention of a program or program segment
+   
+   Start, End or Finish ------> Oval or rounded Rectangle
+   input , output         -----> parallelogram
+   Decision Making    --------> Diamond or rhombus
+   Assignments, calculations ----> rectangle
+   
+   For Drawing flowchart we can use various tools
+       google draw, Raptor
+   
+   url for Raptor tool installation
+      https://raptor.martincarlisle.com/
+
+   Online Raptor tools
+   https://jezersek.eu.org/projects/arhiv/raptor/
+   
+   input - use GET (uppercase)
+   output - use PUT (uppercase)
+
+Assignment urls: 
+https://gitlab-cgi.stackroute.in/stack_problem_solving_techniques_boilerplates/algorithm_exercise
+https://gitlab-cgi.stackroute.in/stack_problem_solving_techniques_boilerplates/flowchart_exercise
+ 
+ Follow the steps given:
+ 
+ Step-1  : Fork the repository
+ Step-2  : Clone the repository
+ Step-3  : Complete all the exercise in .md file and save
+ Step-4  : git add .
+ Step-5  : git commit -am "Exercise done"
+ Step-6  : git push origin master
+ Step-7  : Assign the mentor (shankar) and give reporter access
+               and click Invite.
+			   
+Tomorrow (14-08-2020) : 
+
+		   Pseudocodes 
+           Scratch
+		   Overall revision of 3 days session will be done
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+
+
+ 
+ 
+ 
+ 
+ 
+ 

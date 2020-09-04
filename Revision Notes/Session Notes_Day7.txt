@@ -1,0 +1,144 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (20/08/2020)
+
+1. StandUp Call
+
+2. Arrays in Java
+
+Example -1 : 
+
+Sorting of Numbers using Java Arrays
+
+    int[] array1=new int[5];
+		int k;
+	Scanner scn=new Scanner(System.in);
+	for(int i=0;i<5;i++)
+		array1[i]= scn.nextInt();
+		for(int i=0;i<5;i++)
+			{
+			for(int j=0;j<5;j++)
+				{
+					if(array1[j]>array1[i])
+						{ 
+						k=array1[i];
+						array1[i]=array1[j];
+						array1[j]=k;
+						}
+				}
+			for(int i=0;i<5;i++)
+				System.out.println(array1[i]);
+
+Example -2 : 
+
+Finding the Maximum Number  using Java Arrays
+
+int[] arr=new int[10];
+int t;
+Scanner scn=new Scanner(System.in);
+for(int i=0;i<10;i++)
+{
+arr[i]=scn.nextInt();
+
+}
+t=arr[0];
+for(int i=1;i<10;i++)
+{
+if(arr[i]>t)
+{
+t=arr[i];
+}
+}
+System.out.println(t);
+}
+
+}
+
+
+Enter your message
+
+
+
+
+
+3. Wrapper Classes
+
+Class representation of primitive data type is termed as Wrapper.
+In, Datas are stored in form of object (Collections).
+
+String num1 = "5678";
+int num2 = Integer.parseInt(num1);
+
+//Integer is Wrapper Class
+// parseInt() is a method used to convert String to integer
+
+The following methods are used to get the value 
+associated with the corresponding wrapper object: 
+
+intValue(), byteValue(), shortValue(), longValue(), 
+floatValue(), doubleValue(), charValue(), booleanValue().
+
+Uses of Wrapper Class
+Change the value in Method: Java supports only call by value. 
+So, if we pass a primitive value, it will not change the original value. 
+But, if we convert the primitive value in an object, 
+it will change the original value.
+Serialization: We need to convert the objects into streams to perform the serialization. 
+If we have a primitive value, we can convert it in objects through the wrapper classes.
+Synchronization: Java synchronization works with objects in Multithreading.
+java.util package: The java.util package provides the utility classes to deal with objects.
+Collection Framework: Java collection framework works with objects only. 
+All classes of the collection framework  deal with objects only.
+
+
+//Creating Wrapper class object 
+	Integer obj = new Integer(100);  
+		
+	//Converting the wrapper object to primitive
+	int num = obj.intValue();
+
+	System.out.println(num+ " "+ obj);  
+	
+
+// create primitive types
+    int a = 5;
+    double b = 5.65;
+
+    //converts into wrapper objects
+    Integer aObj = Integer.valueOf(a);
+    Double bObj = Double.valueOf(b);
+
+    if(aObj instanceof Integer) {
+      System.out.println("An object of Integer is created.");
+    }
+
+    if(bObj instanceof Double) {
+      System.out.println("An object of Double is created.");
+    }
+	
+	
+	
+	ArrayList<Integer> list = new ArrayList<>();
+
+      //autoboxing
+      list.add(5);
+      list.add(6);
+
+      System.out.println("ArrayList: " + list);
+
+      // unboxing
+      int a = list.get(0);
+      System.out.println("Value at index 0: " + a);
+   }
+}
+
+
+4. AutoBoxing and UnBoxing
+
+Automatic conversion of primitive to Objects (Auto Boxing)
+
+Tomorrow's Session
+Enums
+Date-Time class in java
+static

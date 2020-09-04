@@ -1,0 +1,383 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (28/08/2020)
+
+1. StandUp Call 
+ 
+2. Map Interface
+
+3. Comparator and Comparable
+
+4. Tree
+
+5. ArrayDeque
+
+The Map Interface:
+
+- present in java.util package represents a mapping between a key and a value.
+- Each key and value pair is known as an entry.
+- The Map interface is not a subtype of the Collection interface
+- A map contains unique keys.
+- Useful for search,update or remove elements on the basis of a key
+
+There are two interfaces for implementing Map in java: Map and SortedMap, and three classes: HashMap, LinkedHashMap, and TreeMap. 
+
+Ex 1:
+
+public class MapDemo {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Jessica");
+        map.put(2, "Samarah");
+        map.put(3, "Daniel");
+        map.put(3, "Veronica");
+        System.out.println("Initial Mapping are: " + map);
+
+        System.out.println("Is the key '2' present: " + map.containsKey(2));
+        System.out.println("Is the value Samarah present: " + map.containsValue("Samarah"));
+        String value = map.get(3);
+        System.out.println(value);
+        System.out.println("Removed value: " + map.remove(1));
+        System.out.println("Removed value: " + map.remove(1));
+        map.clear();
+        int size = map.size();
+        System.out.println("Map size: " + size);
+        boolean isEmpty = map.isEmpty();
+        System.out.println("Map is empty: " + isEmpty);
+
+    }
+}
+
+Ex 2: 
+
+public class HashMapDemo {
+    public static void main(String[] args) {
+        Map<String, Integer> numbers = new HashMap<>();
+        numbers.put("Quantity", 1);
+        numbers.put("Price", 200);
+        System.out.println("Map: " + numbers);
+        System.out.println("Keys: " + numbers.keySet());
+        System.out.println("Values: " + numbers.values());
+        System.out.println("Entries: " + numbers.entrySet());
+    }
+}
+ 
+Ex 3: 
+
+public class MapIteration {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Jessica");
+        map.put(2, "Samarah");
+        map.put(3, "Daniel");
+        System.out.println("Initial mapping are:  " + map);
+        for (Map.Entry entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+}
+
+Ex 4:
+
+public class MapSorting {
+
+    public static void main(String[] args) {
+        //Map<String, Integer> map = new LinkedHashMap<>();
+
+        Map<String, Integer> map = new TreeMap<>();
+        map.put("Ryan", 10);
+        map.put("Garry", 30);
+        map.put("Tim", 20);
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+}
+
+Comparable and Comparator:
+
+Java provides two interfaces to sort objects using data members of the class:
+Comparable
+Comparator
+
+
+Using Comparable Interface
+
+A comparable object is capable of comparing itself with another object. The class itself must implements the java.lang.Comparable interface to compare its instances.
+
+ Ex Comparable:
+
+public class Movie implements Comparable<Movie> {
+    private double rating;
+    private String name;
+    private int year;
+
+    public Movie(double rating, String name, int year) {
+        this.rating = rating;
+        this.name = name;
+        this.year = year;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    @Override
+    public int compareTo(Movie movie) {
+        return this.year - movie.year;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Movie> list = new ArrayList<Movie>();
+        list.add(new Movie(8.3, "Force Awakens", 2015));
+        list.add(new Movie(8.7, "Star Wars", 1977));
+        list.add(new Movie(8.0, "Blade Runner 2049", 2017));
+        list.add(new Movie(8.4, "Return of the Jedi", 1983));
+        Collections.sort(list);
+        System.out.println("Movies after Sorting by year: ");
+        for (Movie movie : list) {
+            System.out.println(movie.getName() + " " + movie.getRating() + " " + movie.getYear());
+
+        }
+}
+}
+
+Using Comparator
+Unlike Comparable, Comparator is external to the element type we are comparing. It’s a separate class. We create multiple separate classes (that implement Comparator) to compare by different members.
+Collections class has a second sort() method and it takes Comparator. The sort() method invokes the compare() to sort objects.
+
+Ex Comparator:
+
+public class RatingCompare implements Comparator<Movie> {
+    @Override
+    public int compare(Movie movie, Movie movie1) {
+        if (movie.getRating() < movie1.getRating())
+            return -1;
+        if (movie.getRating() > movie1.getRating())
+            return 1;
+        else
+            return 0;
+    }
+}
+
+public class NameCompare implements Comparator<Movie> {
+    @Override
+    public int compare(Movie movie, Movie movie1) {
+        return movie.getName().compareTo(movie1.getName());
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Movie> list = new ArrayList<Movie>();
+        list.add(new Movie(8.3, "Force Awakens", 2015));
+        list.add(new Movie(8.7, "Star Wars", 1977));
+        list.add(new Movie(8.0, "Blade Runner 2049", 2017));
+        list.add(new Movie(8.4, "Return of the Jedi", 1983));
+        Collections.sort(list);
+        System.out.println("Movies after Sorting by year: ");
+        for (Movie movie : list) {
+            System.out.println(movie.getName() + " " + movie.getRating() + " " + movie.getYear());
+
+        }
+        System.out.println("\nSorted by rating");
+        RatingCompare ratingCompare = new RatingCompare();
+        Collections.sort(list, ratingCompare);
+        for (Movie movie : list) {
+            System.out.println(movie.getRating() + " " + movie.getName() + " " + movie.getYear());
+        }
+        System.out.println("\nSorted by name");
+        NameCompare nameCompare = new NameCompare();
+        Collections.sort(list, nameCompare);
+        for (Movie movie : list) {
+            System.out.println(movie.getName() + " " + movie.getRating() + " " + movie.getYear());
+        }
+    }
+}
+
+
+
+Non Linear Data Structure
+
+A Tree is a non-linear data structure where data objects are 
+generally organized in terms of hierarchical relationship. 
+
+                          0
+					0         0
+                 0    0     0    0
+
+The structure is non-linear in the sense that data in a 
+tree is not organized linearly.
+
+A binary tree is a recursive tree data structure where 
+each node can have 2 children at most.
+
+Each data element stored in a tree structure called a node. 
+
+A Tree node contains the following parts:
+	1. Data
+	2. Pointer to left child
+	3. Pointer to the right child
+	
+	In Java, we can represent a tree node using class.
+
+static class Node {    
+        int value; 
+        Node left, right; 
+          
+        Node(int value){ 
+            this.value = value; 
+            left = null; 
+            right = null; 
+        }
+
+
+Ex :
+
+public class Tree { 
+    
+	static class Node {    
+    	int value; 
+        Node left, right; 
+          
+        Node(int value){ 
+            this.value = value; 
+            left = null; 
+            right = null; 
+        } 
+    } 
+       
+    public void insert(Node node, int value) {
+        if (value < node.value) 
+		    { 
+			  if (node.left != null) 
+			    { 
+				     insert(node.left, value); 
+				} else { 
+				System.out.println(" Inserted " + value + " to left of " + node.value); 
+				node.left = new Node(value);
+				 } 
+				} 
+				else if (value > node.value) 
+				 {
+                 if (node.right != null) 
+				    {
+                      insert(node.right, value);
+                    } else {
+            System.out.println("  Inserted " + value + " to right of " + node.value);
+            node.right = new Node(value);
+          }
+        }
+      }
+	  
+     public void traverseInOrder(Node node) {
+        if (node != null) {
+            traverseInOrder(node.left);
+            System.out.print(" " + node.value);
+            traverseInOrder(node.right);
+        }
+     }
+     
+     public static void main(String args[]) 
+    { 
+                Tree tree = new Tree();
+                Node root = new Node(5);
+                System.out.println("Binary Tree Example");
+                System.out.println("Building tree with root value " + root.value);
+                tree.insert(root, 2);
+                tree.insert(root, 4);
+                tree.insert(root, 8);
+                tree.insert(root, 6);
+                tree.insert(root, 7);
+                tree.insert(root, 3);
+                tree.insert(root, 9);
+                System.out.println("Traversing tree in order");
+                tree.traverseLevelOrder();
+                
+              }
+}
+
+                     5
+				  2          8 	 
+                     4    6      9
+				   3	      7
+					            
+
+ArrayDeque
+
+Unlike Queue, we can add or remove elements from both sides.
+Null elements are not allowed in the ArrayDeque.
+ArrayDeque is not thread safe, in the absence of external synchronization.
+ArrayDeque has no capacity restrictions.
+ArrayDeque is faster than LinkedList and Stack.
+
+
+offerFirst() : This method inserts the specified element at the front of this list.
+
+Ex: 
+
+ArrayDeque<String> animals= new ArrayDeque<>();
+
+        // Using add()
+        animals.add("Dog");
+
+        // Using addFirst()
+        animals.addFirst("Cat");
+
+        // Using addLast()
+        animals.addLast("Horse");
+        System.out.println("ArrayDeque: " + animals);
+		
+		animals.offer("Dog");
+
+        // Using offerFirst()
+        animals.offerFirst("Cat");
+
+        // Using offerLast()
+        animals.offerLast("Horse");
+    }
+}
+
+Predict the output: -
+
+List<String> techs = new ArrayList<String>();
+techs.add("java");
+techs.add("flex");
+techs.add("flash");
+Collections.sort(techs);
+System.out.println(techs[1]);  -----> flex
+
+
+ HashMap<String,String> capital = new HashMap<String,String>();
+ capital.put("a","apple");
+ capital.put("b","bat");
+ capital.put("c","Chennai");
+ capital.put("a","aarthi");
+ System.out.println(capital.get(a));  -----------> aarthi
+
+List<Integer> v = new Array<Integer>(); 
+v.add(25); 
+v.add(67); 
+v.add(86); 
+int res= v.size()*v.get(1);
+System.out.println(res) -------------->201
+
+
+
+
+
+
+
+
+
+

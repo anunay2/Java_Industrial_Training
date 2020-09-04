@@ -1,0 +1,234 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (24/08/2020)
+
+1. StandUp Call
+
+2. Object Oriented Programming
+
+3. Class 
+
+4. Attributes
+
+5. Methods
+
+6. Object
+
+7. Access Specifiers
+
+        private, protected, default , public
+
+8. Constructors
+
+9. Encapsulation
+
+	 has a relationship
+
+10. Inheritance
+
+      is a relationship
+
+
+Object Oriented Programming
+
+-> Data Security
+-> real time entity
+-> resusauabilty
+
+Class 
+
+-> blue print of an object
+-> describes the state and behaviour of the object
+-> it contains Attributes and methods.
+
+Objects
+  
+  -> any real time entity
+  -> Instance of a class
+  -> new is keyword which is used for instantiating the class.
+  
+  
+ Person
+ 
+   name
+   height
+   age                         ------- Properties/ Attributes / Instance Variable
+   Qualification
+   Gender
+   
+   eat()
+   walk()                      ------> Behaviours / Methods
+   Speak()
+   
+   
+   Person p1 = new Person();
+   p1.name ="Saxena";
+   p1.age=18;
+   
+   Any class with attributes and methods is termed as Java Bean or 
+    POJO (Plain Old Java Objects)  or Model (MVC).
+	
+   Access Specifiers
+   
+   scope of the instance varaible are decided by access specifiers
+   
+   private instance variables, methods are accessible within the same class.
+   protected instance variables are accessible  by sub classes of the same package
+                        or sub classes of different
+   default : when no acccess specifier it is called as default.
+             Accessible across multiple classes of the same package
+   public : accessible anywhere
+           
+  Constructor 
+                method name which is same as class name.
+				method gets called during instantion
+				constructor cannot return any value
+				constructor can take arguments
+				constructor can be overloaded.
+				when a constructor does not have any parameters
+				they are called as default constructors.
+				
+	class Dept{
+	  
+	  int dno;
+	  String dname;
+	  
+	  Dept(){}  // default constructor
+	  
+	  Dept(int dno, String dname) // Parameterized constructor
+	  
+	  
+	Encapsulation :
+	
+	Binding of Data members and methods within the class
+	 is called as Encapsulation
+	 
+	Relationship between the classes.
+
+    Association : inter-dependant on each
+	
+	Account                                  Bank
+	
+	  Account No                             Bank Name
+	  Account Type                           Branch
+	  Account Name                           IFSC code
+	
+	Aggregation  has-a 
+	
+	Both the classes has a relationship
+	One class does not exists, when other class become obsolete
+	  
+	  Building                               Windows
+	  	   
+	   Number                                  length
+	   Floor                                   breadth
+	   doors and windows                       height
+	   
+	
+	Composition
+	
+	When 2 different classes are related to each other, One class continues
+	to exists when other class becomes obsolete
+	
+	 School                                    Address
+	 Name                                      no
+	 classrooms                                stname
+	 Head                                      city
+	
+	
+	Inheritance
+	
+	deriving a sub class from an already exisiting class
+	- modularity
+	- code re-usability
+	- extensibility
+	
+	
+	Types of inheritance
+	
+	Single - if we derive only one sub class, then it is called single inheritance
+	Multi-Level - we can go on deriving the subclass at different levels
+	Multiple - deriving a sub class from two different parent class
+	Hybrid  - combination Multi-level and Multiple
+	
+	java does nor multiple inheritance
+	
+	keyword: extends
+	
+	final
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	  
+				
+				
+				
+   
+   
+   
+   
+   
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+Assignment urls
+https://gitlab-cgi.stackroute.in/stack_jfse_prereq_corejavads_exercises/exercise-bt-class-object-product-analysis.git
+
+
+Tomorrow's Session
+
+Abstract class
+Interfaces
+Polymorphism
+
+
+

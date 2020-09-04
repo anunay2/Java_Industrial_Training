@@ -1,0 +1,333 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (31/08/2020)
+
+1. StandUp Call 
+ 
+2. Sorting
+
+	Bubble Sort
+	
+	Insertion Sort
+	
+	Merge Sort
+	
+	Quick Sort
+
+3. Searching
+
+    Linear Search
+	
+	Binary Search 
+	
+	
+Sorting and Searching
+
+Divide and Conquer Algorithm  
+    
+	Merge Sort
+	
+	Quick Sort
+  
+
+Greedy Algorthims
+	
+	Bubble Sort
+	
+	
+	
+Time complexity Analysis –
+
+Bubble sort and Insertion sort –
+Average and worst case time complexity: n^2
+Best case time complexity: n when array is already sorted.
+Worst case: when the array is reverse sorted.
+
+Selection sort –
+Best, average and worst case time complexity: n^2 which is independent of distribution of data.
+
+Merge sort –
+Best, average and worst case time complexity: nlogn which is independent of distribution of data.
+
+Quick sort –
+It is a divide and conquer approach with recurrence relation:
+ T(n) = T(k) + T(n-k-1) + cn
+Worst case: when the array is sorted or reverse sorted, the partition algorithm divides the array in two subarrays with 0 and n-1 elements. Therefore,
+
+
+
+Exception Handling
+
+What is an Exception?
+
+Abnormal termination of a program is called Exception
+During the execution the program will halt abruptly.
+As a Developer, we need to handle the exception properly.
+
+Exception Handling in Java
+
+throwable : super class of all the classes of Exception.
+
+2 methods of throwable classes
+
+  1. printstacktrace() returns an object of the Exception type
+  2. getMessage() returns the String of error messages
+  
+There 2 sub classes in the Exception hirarchy (Throwable)
+
+1. Error       : cannot be handled by developer
+2. Exception   : Developer can handle efficiently.
+
+Exception Type
+
+1. checked Exception  / compile time exception  :IOException , SQLException
+2. Unchecked Exception / Runtime exception : NullPointerException, ArithmeticException
+
+try, catch, throw, throws, finally
+
+try : tries to find the exception and throws.
+catch : catch the exception and handle it appropriately.
+throw : is used to throw user-defined Exception
+throws : is used with method signature so that exception can be handled
+          by such methods.
+finally : irrespective of exception is handled or not, statements in the finally
+           block gets executed.
+		   
+**************  Exception Demo code -1***********************
+
+public class ExceptionEx1 {
+    public static void main(String[] args) {
+        int i,j;
+        double res =0.0;
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter a value");
+        i= scn.nextInt();
+        System.out.println("Enter another value");
+        j = scn.nextInt();
+        try{
+             res = i/j;
+             System.out.println(res);
+        }catch(ArithmeticException e){
+            //System.out.println("You cannot divide the Number by Zero");
+        //    e.printStackTrace();
+            String error = e.getMessage();
+            System.out.println(error);
+        }
+
+    }
+}
+
+********Multiple catch Block Example *************
+
+When there are multiple catch blocks, whichever the exception is thrown first
+will handled and program terminates.
+
+  public static void main(String[] args) {
+        int i,j;
+        double res =0.0;
+        int x[]={25,3,1};
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter a value");
+        i= scn.nextInt();
+        System.out.println("Enter another value");
+        j = scn.nextInt();
+        try{
+             res = i/j;
+             System.out.println(res);
+            for(int k=0;k<=x.length;k++){
+                System.out.println(x[k]);
+            }
+        }catch(ArithmeticException e) {
+            //System.out.println("You cannot divide the Number by Zero");
+            //    e.printStackTrace();
+            String error = e.getMessage();
+            System.out.println(error);
+        } catch(ArrayIndexOutOfBoundsException aei){
+            System.out.println("Reading beyond the limit");
+        }
+
+    }
+}
+
+******************finally block ********************************
+public static void main(String[] args) {
+        int i,j;
+        double res =0.0;
+        int x[]={25,3,1};
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter a value");
+        i= scn.nextInt();
+        System.out.println("Enter another value");
+        j = scn.nextInt();
+        try{
+             res = i/j;
+             System.out.println(res);
+            for(int k=0;k<x.length;k++){
+                System.out.println(x[k]);
+            }
+        }catch(ArithmeticException e) {
+            //System.out.println("You cannot divide the Number by Zero");
+            //    e.printStackTrace();
+            String error = e.getMessage();
+            System.out.println(error);
+        } catch(ArrayIndexOutOfBoundsException aei){
+            System.out.println("Reading beyond the limit");
+        } finally {
+            System.out.println("Inside finally");
+        }
+
+    }
+
+*******************Custom Exception or User-defined Exception*******************
+
+Exceptions created by Developers 
+CustomException class must extend Exception
+
+
+public class Age_valid_exception extends Exception{
+
+    Age_valid_exception(String message){
+            super(message);
+    }
+}
+
+public class UserInfo {
+    public static void main(String[] args) {
+        int age;
+        Scanner sc = new Scanner(System.in);
+        age =sc.nextInt();
+        if( (age < 0) || (age > 100)) {
+            try {
+                throw new Age_valid_exception("Invalid Age");
+            } catch (Age_valid_exception e) {
+                System.out.println(e.getMessage());
+            }
+        }else
+        {
+            System.out.println(age);
+        }
+        sc.close();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		   
+		   
+		   
+		   
+		   
+
+
+
+
+
+
+
+
+
+//Reading and Writing the data in and from the filename
+
+public class Person implements Serializable {
+    private String firstName;
+    private String lastName;
+    private int birthYear;
+
+    public Person(String firtName, String lastName, int birthYear) {
+        this.firstName = firtName;
+        this.lastName = lastName;
+        this.birthYear = birthYear;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firtName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthYear=" + birthYear +
+                "}\n";
+    }
+
+    public static void main(String[] args) {
+        Person p1 = new Person("Jony", "Deep", 1980);
+        Person p2 = new Person("Andrew", "Justin", 1990);
+        Person p3 = new Person("Valak", "Susan", 1995);
+
+        ArrayList<Person> people = new ArrayList<>();
+
+        people.add(p1);
+        people.add(p2);
+        people.add(p3);
+
+        //write to file
+        try{
+            FileOutputStream writeData = new FileOutputStream("peopledata.txt");
+            ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
+
+            writeStream.writeObject(people);
+            writeStream.flush();
+            writeStream.close();
+
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try{
+            FileInputStream readData = new FileInputStream("peopledata.txt");
+            ObjectInputStream readStream = new ObjectInputStream(readData); // chaining of streams
+
+            ArrayList people2 = (ArrayList<Person>) readStream.readObject();
+            readStream.close();
+
+            System.out.println(people2.toString());
+        }catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+

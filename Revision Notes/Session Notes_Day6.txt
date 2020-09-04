@@ -1,0 +1,172 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (19/08/2020)
+
+1. StandUp Call
+
+   Teething issues in Coding - resolved - Done
+   Hobbes Submission - Done
+   Fill in the google sheet for the Assignment updates - Done
+    	 
+2. Strings in Java
+   
+   Strings in Java are Objects. 
+   Strings are immutable. 
+   Whenever a change to a String is made, 
+   an entirely new String is created.
+
+   Memory allotment of String
+	Whenever a String Object is created, two objects will be created- 
+	one in the Heap Area and one in the String constant pool and 
+	the String object reference always points to heap area object.
+	
+	Strings Functions Discussed by Mitali Garg today
+	
+	Following functions were discussed by her with demo code.
+	
+	toUpperCase() : converts the strings to uppercase
+	toLowerCase() : Converts the strings to lowercase
+	toString()    : converts any values to String
+	concat()      : joins two Strings 
+	length()      : Gives us no of characters in a String
+	split()       : splits the strings based on the delimiter.
+	substring()   : extract part of the string
+	replace()     : replaces the character in a string with a new values.
+	
+
+3. StringBuffer
+
+   StringBuffer is a mutable class of the String.
+   Methods in StringBuffer are synchronized.
+   Hence they are thread-safe
+   StringBuffer may have characters and substrings 
+   inserted in the middle or appended to the end.
+   
+   StringBuffer sb = new StringBuffer();
+   
+   //Implementation of Append()
+        StringBuffer sb = new StringBuffer("Learning Java at");
+        sb.append(" Stackroute");
+        System.out.println(sb); // prints the output
+
+        //Deleting the character in String
+        StringBuffer sb1 = new StringBuffer("Training");
+        sb1.deleteCharAt(0);
+        System.out.println(sb1);
+        sb1.delete(1,3);
+        System.out.println(sb1);
+
+        //Inserting a Character to a String
+        StringBuffer sb2 = new StringBuffer("raining");
+        sb2.insert(2,"trim");
+        System.out.println(sb2);
+
+        //Reversing the String
+        System.out.println(sb2.reverse());
+
+        //Replace the string with new Value
+        StringBuffer sb3 = new StringBuffer("Jack");
+        sb3.replace(0, 1, "Bl");
+        System.out.println(sb3);
+
+
+4. StringBuilder
+
+    StringBuilder is a mutable class of the String.
+	Methods in StringBuffer are unsynchronized.
+    Hence they are not thread-safe
+    StringBuilder may have characters and substrings 
+    inserted in the middle or appended to the end.
+	
+	  //Implementation of Append()
+        StringBuilder sb = new StringBuilder("Learning Java at");
+        sb.append(" Stackroute");
+        System.out.println(sb); // prints the output
+
+        //Deleting the character in String
+        StringBuilder sb1 = new StringBuilder("Training");
+        sb1.deleteCharAt(0);
+        System.out.println(sb1);
+        sb1.delete(1,3);
+        System.out.println(sb1);
+
+        //Inserting a Character to a String
+        StringBuilder sb2 = new StringBuilder("raining");
+        sb2.insert(2,"trim");
+        System.out.println(sb2);
+
+        //Reversing the String
+        System.out.println(sb2.reverse());
+
+        //Replace the string with new Value
+        StringBuilder sb3 = new StringBuilder("Jack");
+        sb3.replace(0, 1, "Bl");
+        System.out.println(sb3);
+
+
+5. StringTokenizer
+
+   StringTokenizer class belongs to util package.
+   It is used to split the string using delimiters
+   It has two methods
+           hasMoreTokens() - boolean
+		   nextToken() - object
+
+   StringTokenizer st = new StringTokenizer("Mary-had,a little;lamb-but it ran", "-, , ; ");
+        while (st.hasMoreTokens()){
+            System.out.println(st.nextToken());
+        }
+
+6. String Joiners (Java 8)
+
+StringJoiners are used for joining multiple string together.
+
+  StringJoiner mystring = new StringJoiner("-");    
+          
+        // Joining multiple strings by using add() method  
+        mystring.add("Logan");  
+        mystring.add("Magneto");  
+        mystring.add("Rogue");  
+        mystring.add("Storm");  
+                  
+        // Displaying the output String
+        System.out.println(mystring);  
+
+Ex:2
+
+   StringJoiner mystring = new StringJoiner(",", "(", ")");    
+          
+        // Joining multiple strings by using add() method  
+        mystring.add("Negan");  
+        mystring.add("Rick");  
+        mystring.add("Maggie");  
+        mystring.add("Daryl");  
+                  
+        // Displaying the output String
+        System.out.println(mystring);  
+
+
+
+Assignment URL's
+
+https://gitlab-cgi.stackroute.in/stack_java_cycle1_exercises/exercise-bt-conditionalstatements-switchcase.git
+https://gitlab-cgi.stackroute.in/stack_java_cycle3_exercises/exercise-bt-strings-string.git
+https://gitlab-cgi.stackroute.in/stack_java_cycle3_exercises/exercise-bt-strings-stringbuilder.git
+
+
+
+Thursday (20/08/2020)
+ 
+Java Arrays
+Wrapper Classes
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

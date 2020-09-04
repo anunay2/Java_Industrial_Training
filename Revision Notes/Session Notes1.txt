@@ -1,0 +1,104 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (12/08/2020)
+
+1. Program Walk-Through - Done
+
+2. GotoMeeting : platform to connect lively for Participants
+                 classroom mode - 
+				 Mentors can connect to participants (2 hrs)
+				 
+3. Slack  : offline media for the participantsto get 
+            connected with Mentors
+            Mentor connectivity, Operational issues 
+			you can slack - Done
+			
+4. gitlab Walk-through : https://gitlab-cgi.stackroute.in/
+
+5. vlabs -  Done 
+
+6. vlabshelpdesk : vlabshelpdesk@stackroute.in (or)
+                   learnersupport@stackroute.in - Done
+				   
+7. Stackbooks : https://stackbooks-cgi.stackroute.in/ - Done
+                stackbooks-cgi.stackroute.in
+				
+8. StackLearn : Dashboard for each and every participant
+                  https://stacklearn-cgi.stackroute.in/
+
+9. Hobbes  : A tool to evaluate the Assignments submitted by
+             the participants.
+			 
+			 Solution for the Assignment will be there in the 
+			 Assignment solution repo
+			 
+			 A participant must score > 80 to mark that 
+			 Asssignment as completed.
+			 
+			 if not, refactor the code and re-submit it. - Done
+			 
+Software Development
+ A Team / group of people who are going to work in a 
+     project.
+ store their working in repository.
+ 
+ Version control : Managing and Tracking all the changes
+                   in the project 
+ git Repository : git enable project are stored centrally
+ git hosting sites : github, gitlab, gitbucket etc.
+ 
+ git 
+ 
+ Step-1 mkdir myfirstrepo
+ Step-2 cd myfirstrepo
+ Step-3 git status // to check it is git repo
+ Step-4 git init // this will intialiaze to git
+ Step-5 ls -a // to view all the hidden files
+ Step-6 rm -rf .git // git repo will be converted
+                       to normal repo
+ Step-7 git init
+ Step-8 touch welcome.txt // create a file in the 
+                               myfirstrepo folder
+ Step-9 git status // gives file is untracked
+ Step-10  git add . // files in the directory 
+                         will be added
+ Step-11  git status
+ Step-12  git commit -am "initial commit"
+ Step-13  git status
+ Step-14  Add a line of text to the file
+ Step-15 git status
+ Step-16 git add .
+ Step-17 git commit -am "lines added"
+ Step-18 git status
+ Step-19 goto gitlab-cgi.stackroute.in
+           create a new project
+		   clone : https 
+		   goto Terminal
+ Step-20 git remote add origin url
+ Step-21 git remote -v
+ Step-22 git push origin master
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+			 
+			 
+
+
+
+
+
+
+
+Urls
+https://gitlab-cgi.stackroute.in/
+https://stackBooks-cgi.stackroute.in
+https://hobbes-cgi.stackroute.in
+https://Stacklearn-cgi.stackroute.in

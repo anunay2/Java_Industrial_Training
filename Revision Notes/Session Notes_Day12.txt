@@ -1,0 +1,414 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (27/08/2020)
+
+1. StandUp Call 
+  
+     OOAD - Done 
+
+2. Data Structures
+ 
+       a) Linear 
+	   
+	   b) Non Linear
+
+3. Collections
+
+4. Interfaces in Collections
+    
+	 a) List
+	 
+	 b) Set
+
+5. Classes of List Implementations
+
+     a)  ArrayList
+	 
+	 b)  LinkedList
+
+6. Classes of Set Implementations
+
+     a) HashSet
+	 
+	 b) TreeSet
+	 
+
+
+
+A data structure is a particular way of organizing 
+data in a computer.
+
+It can also be called as a specialized format for 
+organizing, processing, retrieving and storing data. 
+
+It can be used effectively. 
+
+Linear Data Structure
+
+		Ex: Arrays, Linked List, Stack, Queue
+
+Non Linear Data Structure
+
+		Ex: Tree, Graph etc.
+		
+Arrays : 
+        Collection of similar data elements
+		Any array with start with index number as 0.
+		Last index number is n-1 
+		where n is number of elements
+		
+Stack : 
+       It is a Linear structure.
+	   All the elements will added and removed at
+	   one end.
+	   Pricipal is Last in First Out.
+	   
+	   Ex :
+	   stack of books
+	   Notepad
+	   Plates
+	   Person in the lift
+	   
+Operation :
+            Add elements (push)
+			removing elements (pop)
+Ex:
+
+public class Stackdemo {
+	
+		public static void main(String[] args) {
+        Stack<Integer> st = new Stack<>();
+        
+        st.push(40);
+        System.out.println(st);
+        st.push(56);
+        System.out.println(st);
+        System.out.println(st.pop());
+        System.out.println(st.pop());
+		}}
+		
+		
+Queue
+          It is a Linear Data Structure
+		  Adding and removing elements will happen at different ends.
+		  It follows the priciple of First in first out
+		  Enqueue() : adding the elements - add()
+		  Dequeue() : removing the elements - remove()
+		  peek() : 
+		  isEmpty() : Queue is empty 
+		  poll() : 
+		  addAll() : adding one collection to another.
+		  
+Ex :
+
+   Queue<String> qe = new LinkedList<String>();
+        qe.add("Aditya");
+        qe.add("Milan");
+        qe.add("Nandhini");
+        qe.add("Shankar");
+        System.out.println(qe);
+
+        Queue<String> qe1 = new LinkedList<String>();
+        qe1.add("Java");
+        qe1.add("C#");
+        qe1.add("Javascript");
+        qe1.add("OOPs");
+        System.out.println(qe1);
+
+        qe.addAll(qe1);
+        System.out.println(qe);
+        System.out.println("Removed element: "+qe.remove());
+
+        System.out.println("poll(): "+qe.poll());
+        System.out.println("peek(): "+qe.peek());
+        System.out.println("Is Empty"+ qe.isEmpty());
+		
+   peek() : retruns the object without any deletion
+   poll() : returns the object by deleting the top element, if queue 
+            becomes empty, it returns null.
+		  
+		  
+Collection Framework
+
+ Framework : It is a set of classes and Interfaces which can
+               be either extended and implemented in the Application
+		  
+ Collection (Interface)
+    Data is stored as an object.
+	It contains all abstract methods
+		add()
+		remove()
+		addAll()
+		index()
+		lastIndex()
+		
+   reduced lines of code
+   performance is high
+   execution time is less.
+	                     			    Collection
+						
+			     List         				Set        				Map	
+				 
+	   ArrayList    LinkedList		TreeSet  HashSet	   TreeMap 		HashMap
+	   
+
+List :
+       Elements are stored in the same order of the input.
+	   It is called Ordered Collection
+	   It allows duplicate elements 
+	   It can also allow null values.
+	   
+	   Ex: ArrayList, LinkedList, Vector
+
+ArrayList : methods are unsychronized
+Vector : methods are synchronized.
+
+Usually collection can store elements of multiple Datatype 
+In order to restrict the particular data type:
+      Generics
+	  
+	 <Integer>
+	 <Double>
+	 <String>
+	 
+Ex: 
+   List<String> list = new ArrayList<>();
+        list.add("Hari");
+        list.add("Anand");
+        list.add("Natraj");
+        list.add("Shankar");
+        list.add("Ramkumar");
+        System.out.println(list);
+        //list.add(2,"Deepa");
+        list.add("Anand");
+        list.add("Anand");
+        list.add("Anand");
+        System.out.println(list.contains("Shankar"));
+        System.out.println(list.indexOf("Hari"));
+        System.out.println(list.isEmpty());
+        System.out.println(list.size());
+        System.out.println(list.lastIndexOf("Anand"));
+        System.out.println(list.get(3));
+
+//        List<String> countrylist = new ArrayList<>();
+//        countrylist.add("India");
+//        countrylist.add("China");
+//        countrylist.add("Japan");
+//        countrylist.add("Nepal");
+//        list.addAll(2,countrylist);
+//        System.out.println(list);
+        list.add("Anand");
+        list.add("Anand");
+        list.add("Anand");
+        list.remove(4);
+        System.out.println(list);
+        list.remove("Natraj");
+        System.out.println(list);
+
+        List<Integer> ls = new ArrayList<>();
+        ls.add(2);
+        ls.add(25);
+        ls.add(100);
+        System.out.println(ls);
+        ls.remove(2);
+        System.out.println(ls);
+
+        //Numerical Loop
+        for(int i=0;i<list.size();i++)
+            System.out.print(list.get(i)+" ");
+
+        //For each loop
+        for(String lst :list){
+            System.out.print(lst+ " ");
+        }
+
+        // Using iterator interface , we can traverse through all the elements
+        Iterator<String> itr = list.iterator();
+        while(itr.hasNext())
+        {
+            String names= (String)itr.next();
+            System.out.println(names);
+        }
+	
+LinkedList :
+                It is a linear Data structure.
+				Adding and removing can be done
+				at any desired location.
+			
+Ex:
+	LinkedList ll = new LinkedList();
+       	ll.add("Lavanya");
+        ll.add("Raja");
+        ll.add("Soumya");
+        ll.add("Twinkle");
+        System.out.println(ll);
+        ll.addFirst("Chan");
+        System.out.println(ll);
+        ll.addLast("Saranya");
+        System.out.println(ll);
+        ll.add(3,"Sahail");
+        System.out.println(ll);
+        ll.removeFirst();
+        System.out.println(ll);
+        ll.removeLast();
+        System.out.println(ll);
+        ll.remove(4);
+        System.out.println(ll);
+        ll.remove("Raja");
+        System.out.println(ll);
+        System.out.println(ll.contains("Raja"));
+        System.out.println(ll.size());
+
+
+
+
+
+
+
+Set :
+      We add elements and remove element.
+	  does not allow duplicate values.
+	  can allow single null value.
+	  it is an unordered collection
+	  
+  TreeSet, HashSet
+   
+   TreeSet : elements are arranged in sorted manner
+             without any duplicates.
+			 
+   Hashset : elements are arranged using Hashing technique
+               without duplicates.
+			   
+			   
+  Ex:
+  
+   Set<Integer> ss = new TreeSet<>();
+        ss.add(45);
+        ss.add(98);
+        ss.add(32);
+        ss.add(986);
+        ss.add(500);
+        ss.add(986);
+        ss.add(986);
+        ss.add(986);
+        System.out.println(ss);
+
+        List<String> list = new ArrayList<>();
+        list.add("Hari");
+        list.add("Anand");
+        list.add("Natraj");
+        list.add("Anand");
+        list.add("Anand");
+        list.add("Anand");
+
+        Set<String> ss1 = new TreeSet<>();
+        ss1.addAll(list);
+        System.out.println(ss1);
+
+        Set<Integer> ss2 = new HashSet<>();
+        ss2.add(45);
+        ss2.add(98);
+        ss2.add(32);
+        ss2.add(986);
+        ss2.add(500);
+        ss2.add(986);
+        ss2.add(986);
+        ss2.add(986);
+        System.out.println(ss2);
+
+	   
+Assignment Url:
+
+https://gitlab-cgi.stackroute.in/stack_jfse_prereq_corejavads_exercises/exercise-bt-collections-arraylist-sortedsearch.git
+
+
+Tomorrow Session
+
+Comparable and Comparator
+Map
+
+	   
+	   
+						 
+						 
+						
+						
+						
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+
+
+			
+	
+			
+			
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+		
+		
+		
+		
+		
+		
+		
+		
+		 
+	 
+	
+	 
+
+
+
+
+
+
+
+
+
+Object-oriented analysis and design (OOAD) is a software 
+engineering approach. 
+It models a system as a group of interacting objects. 
+Each object represents some entity in the system being modeled.
+and is characterised by its class, its state (data elements), 
+and its behavior. 
+
+Object-oriented analysis (OOA) applies object-modelling techniques to 
+analyze the functional requirements for a system.
+OOA focuses on what the system does.
+
+
+Object-oriented design (OOD) elaborates the analysis models to 
+produce implementation specifications. 
+OOD on how the system does it.
+
+Association
+Patient - Doctor
+Shopkeeper - Customer
+
+
+Library - Books
+
+Generalization is a mechanism for combining similar classes of 
+objects into a single, more general class. 
+Generalization identifies commonalities among a set of entities. 
+The commonality may be of attributes, behavior, or both. 
+
+Specialization is the reverse process of Generalization means 
+creating new sub-classes from an existing class.

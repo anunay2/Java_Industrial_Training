@@ -1,0 +1,158 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (14/08/2020)
+
+1. StandUp Call - Done
+
+2. Pseudocode  - Done
+
+  What is a Pseudocode?
+  
+   Pseudocode is step by step lines
+   written outline of the code.
+   We can easily transcribe into a 
+   Programming Language.
+  
+  Features of Pseudocode
+    -> to describe how an algorithm should work
+	-> to explain a computing process to less
+	     technical users.
+    -> to design code in a group setting
+	
+  Rules for pseudocode
+  
+     -> clarity is a primary goal of pseudocode
+	 -> remember the purpose / objective of pseudocode
+	 -> plan out the function of the algorithm
+	 -> Explain what each line of program should do.
+	 
+  Do's and Dont's
+  
+  Do's
+     -> use control structures
+	 -> use proper naming conventions
+	 -> use indentation and white spaces are the key
+	 -> Keep your pseudocode simple
+	 -> Keep it concise
+	 
+	 
+  Dont's
+     -> Dont make pseudocode abstract
+	 -> Dont make pseudocode generalised
+	 
+	 
+  What Pseudocode Ensure
+  
+    -> Make sure it is easily understood by the target audience
+	-> Make sure it is translated into a computer program easily
+	-> describe the entire automation process without leaving single aspect
+	
+  Pseudocode for Printing "Hello World"
+     
+	 Step-1 BEGIN
+	 Step-2 DECLARE the variable x
+	 Step-3 Initialiaze the variable x to "Hello World"
+	 Step-4 DISPLAY x
+	 Step-5 END
+	 
+  Pseudocode to determine student promotion based on the score
+  Score is greater than 60 "Passed", otherwise "Failed"
+  
+   Step-1 BEGIN
+   Step-2 DECLARE variable score
+   Step-3 INPUT score
+   Step-4 IF score greater than 60 THEN
+              DISPLAY "Passed"
+		  ELSE
+		      DISPLAY "Failed"
+   Step-5 END
+   
+   Difference  between Algorithm and Pseudo code
+   
+   Algorithms to print all the Even Numbers between
+   1 and 10
+   
+   Step-1 : Store intial value to a variable
+   Step-2 : Repeat the Steps until condition is false
+   Step-3 : Check remainder of the number divided by 2 is 0
+   Step-4 : print variable goto Step-2
+   Step-5 : Stop
+   
+   
+   Pseudocode to print all the Even Numbers between
+   1 and 10
+   
+   BEGIN
+      FOR value 1 to 10 Do
+	    IF value modulo 2 Equal to 0 THEN
+		       DISPLAY value
+	    END IF
+	  END FOR
+   END  
+	  
+  Pseudocode for Fibonacci Series
+  
+  BEGIN
+    DECLARE an integer variable N
+	DECLARE an integer variable sum
+	DECLARE an integer variable f1
+	DECLARE an integer variable f2
+	SET sum to 0
+	SET f1 to -1 
+	SET f2 to  1
+	SET N to 50
+	REPEAT N times
+	    a sum= f1 + f2
+		b f2 <- f1    //f1 = f2
+		c sum <- f2  // f2 = sum
+	    d DISPLAY sum
+	END LOOP
+  END
+  
+ 
+3. Tool for Pseudocode (Scratch)
+
+urls:
+
+To install scratch offline 
+  https://en.scratch-wiki.info/wiki/How_to_Download_the_Scratch_Offline_Editor
+
+To work with scratch online 
+	https://scratch.mit.edu/projects/417584708/editor
+
+
+Assignment url
+
+ https://gitlab-cgi.stackroute.in/stack_problem_solving_techniques_boilerplates/pseudocode_exercise
+
+
+Monday (17/08/2020)
+ 
+ Introduction to Java
+ Variables
+ Writing a Simple Java code
+ Run the code Using commandline
+ Intro to IDE
+ Working with Java Project using IDE
+ (IDE IntelliJ Community Edition 2019)
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

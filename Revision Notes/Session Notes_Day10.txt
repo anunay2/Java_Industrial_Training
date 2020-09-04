@@ -1,0 +1,319 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (25/08/2020)
+
+1. StandUp Call
+
+2. Polymorphism
+
+3. Abstract class
+
+4. Interfaces
+
+
+   I saw a Tree  ---> pasttense of looking at a Tree
+   I saw a Tree ----> cutting the Tree.
+   
+   saw ----->  behaviour of an object changes differently
+               at different instance (polymorphism)
+
+   Polymorphism
+   
+   1. Compiletime Polymorphism - During the compilation of the code,
+                                 we come to know that particular method 
+								 gets executed.(Method Overloading).
+								 
+   2. Run time polymorphism -    During the execution of the program
+                                 Execution of the method depends on Object
+								 of class that is invoking the method.
+								 (Method Overriding).
+	Same method present different classes and they are related using
+	inheritance concepts.
+
+Examples:
+1. Method overriding
+
+public class Animal {
+    public void makeSound(){
+        System.out.println("Animal is going to make sound");
+    }
+}
+
+public class Cat extends Animal{
+    public void makeSound(){
+        System.out.println("Meow");
+    }
+}
+
+public class Dog extends Animal {
+    public void makeSound(){
+        System.out.println("Bark");
+    }
+}
+
+public class AnimalSound {
+    public static void main(String[] args) {
+        Animal a = new Cat();
+        a.makeSound();
+        Animal a1 = new Dog();
+        a1.makeSound();
+
+    }
+}
+
+2. Method Overloading
+
+public class CalulateArea {
+
+    public int Shape_area(int x)
+    {
+         return x * x;
+    }
+
+    public double shape_area(int r){
+        return 3.14 * r * r;
+    }
+
+    public int shape_area(int l, int b){
+        return l * b;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int side = sc.nextInt();
+        CalulateArea ca = new CalulateArea() ;
+
+        int square = ca.Shape_area(side);
+        System.out.println("Area of the Square "+ square);
+
+        int radius = sc.nextInt();
+        double circlearea= ca.shape_area(radius);
+        System.out.println("Area of the Circle "+ circlearea);
+    }
+
+}
+
+
+   Abstract class:
+   
+   A class is said to be an Abstract class.
+   It contains atleast one method as abstract.
+   Methods that does not contain definition is termed
+   as abstract.
+   Abstract class can contains constructors non abstract nethods.
+   Abstract class cannot be instantiated.
+   Class that extends the abstract class is called
+   as Concrete Class.
+   Concrete class can also be abstract.
+   When we try to instantiate the abstract, we get 
+   InstantiationException.
+   
+   Super Keyword: purpose of super keyword is to
+                   call the base constructor from 
+				      derived class copnstructor.
+				  super keyword must be first statement.
+				  
+Example
+
+public abstract class Compute {
+    Compute(int x, int y){
+        System.out.println("sum is "+(x+y));
+    }
+    public abstract int compute(int a , int b);  // abstract method
+    public void Greetings(){
+        System.out.println("Welcome to Abstract class Implementation");
+    } // Non abstract Method
+
+}
+
+public class Calculator extends Compute{
+    @Override
+    public int compute(int a, int b) {
+        return a+b;
+    }
+    Calculator(){
+        super(4,5);
+        System.out.println("hi");
+    }
+
+    public static void main(String[] args) {
+        Calculator cr = new Calculator();
+        int result = cr.compute(35,25);
+        System.out.println("Result is "+result);
+        cr.Greetings();
+    }
+}
+
+
+				  
+   Interfaces
+  
+   An interface in Java is a blueprint of a class. 
+   It has static constants and abstract methods.
+   An interface can be implemented in a class.
+   An interface can be extended in another interface.
+   
+  Example
+  
+  public interface Messages {
+    void sayHello();
+    int addSum(int x, int y);
+    static int MAX_AGE = 100;
+}
+
+public interface Msg1 {
+    public void sayHi();
+}
+
+public class IterfaceEx1 implements Messages,Msg1{
+    @Override
+    public void sayHello() {
+        System.out.println("Hello");
+    }
+
+    @Override
+    public int addSum(int x, int y) {
+        return x+y;
+    }
+
+    public static void main(String[] args) {
+        IterfaceEx1 iex1 = new IterfaceEx1();
+        iex1.sayHello();
+        int sum= iex1.addSum(4,55);
+        System.out.println("sum is "+ sum);
+        System.out.println(Messages.MAX_AGE);
+
+    }
+
+
+Example 2:
+
+public interface Games {
+    public void gameType();
+}
+
+public interface Country extends Games{
+    public void cityName();
+}
+public class Play implements Country{
+
+    @Override
+    public void cityName() {
+        System.out.println("is played at  Bangalore");
+
+    }
+
+    @Override
+    public void gameType() {
+        System.out.println("Cricket");
+    }
+
+    public static void main(String[] args) {
+        Play ply = new Play();
+        ply.gameType();
+        ply.cityName();
+    }
+}
+
+   
+   Assignment url:
+   https://gitlab-cgi.stackroute.in/stack_jfse_prereq_corejavads_exercises/exercise-bt-oops-inheritance-polymorphism.git
+   
+   
+   
+   
+   
+   
+   
+					  
+					  
+					  
+					  
+					  
+					  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+	
+	
+	
+	
+	
+	
+	
+								 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+   
+   
+
+	
+	
+	
+	  
+				
+				
+				
+   
+   
+   
+   
+   
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+Assignment urls
+https://gitlab-cgi.stackroute.in/stack_jfse_prereq_corejavads_exercises/exercise-bt-class-object-product-analysis.git
+
+
+Tomorrow's Session
+
+Abstract class
+Interfaces
+Polymorphism
+
+
+

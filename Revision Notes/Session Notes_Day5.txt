@@ -1,0 +1,307 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (18/08/2020)
+
+1. StandUp Call
+     JDK Installations  - Done
+	 IDE Familiarity    - Done
+	 Executing Basic Java code - Done
+	 
+	 
+2. Control Structures
+   
+   used are for redirecting the flow of execution
+    to some other part/ lines of program
+   
+     simple if
+	 
+	 It can have only if statement and does not have else part. 
+	 Syntax: 
+	 
+	 if (condtion)
+	    {
+		   statements;
+		}
+		
+	Example : 
+	        int x;
+	        if(x <25){
+			   x+=10;
+			  }
+			System.out.println(x);
+			
+ Syntax:
+ 
+	 if else
+	    
+		 if(condition) 
+		   {
+		    true block;
+		   }
+		 else{
+		    false block;
+		 }
+Example :
+   Scanner scn = new Scanner(System.in);
+	int x;
+	x = scn.nextInt();	
+	if(x % 2 == 0)
+		{
+			System.out.println(x + " is even");
+		}
+    else
+		{
+		System.out.println(x + " is odd");
+		}
+
+	 
+ Nested if : if statement within another if Statement
+ 
+                  if(condition1) {
+				       if (condition2){
+					      true block;
+						  }
+					   else
+					      {
+						   false block condition-2;
+						  }
+					   else
+					      {
+						    false block condition-1;
+						  }
+						 
+						 }
+						  
+ Ex : 
+ Scanner scn = new Scanner(System.in);
+	int a;
+	int b;
+	int c;
+	a = scn.nextInt();
+	b = scn.nextInt();
+	c = scn.nextInt();
+		if (a > b) {
+			if (a > c) {
+				System.out.println(a);
+			}
+		else {
+				System.out.println(c);
+			 }
+		} else {
+				if (b > c) {
+					System.out.println(b);
+				} else {
+					System.out.println(c);
+				}
+		}
+
+  if else ladder
+  
+  Syntax:
+          if (condition1) '
+		      {
+		       block1;
+			  }
+			  else if(condition2) 
+			     {
+			      block2
+				 }
+			     else if (condition3) 
+				    {
+				   block3
+				    }
+				 else
+				     {
+					   default block;
+					 }
+Example :
+               if(total_marks>90){
+System.out.println("First class");
+
+}
+else if(total_marks>70){
+System.out.println("Second class");
+}
+else if(total_marks>40){
+System.out.println("PASS");
+}
+else{
+System.out.println("FAIL");
+}
+
+
+  Switch : 
+        Multiple selection criteria
+		default is not mandatory to be at the end.
+  
+            syntax 
+			        switch(expression){
+					  case 1:
+					         statements
+							 break;
+					  case 2:
+					         statements
+							 break;
+					  case 3: 
+					         statements
+							 break;
+					  default:
+					         statements
+							 break;
+		           }
+	Example :
+	
+	       switch(ch){
+case "+":
+result=a+b;
+break;
+case "-":
+result=a-b;
+break;
+case "*":
+result=a*b;
+break;
+case "/":
+if(b==0)
+System.out.println("Invalid");
+else
+result=a/b;
+break;
+default:
+System.out.println("Invalid input");
+break;
+}
+System.out.println(result);
+
+}
+}
+
+	 
+3. Iterative Statement
+
+     Repeated portions of the program segments are called as 
+	        Iterative Statement or Loops
+
+       while : Execution of the code will be repeated until condition
+	               becomes false.
+				   
+		                   while(condition){
+						     block;
+							}
+	Example :
+	  Scanner s=new Scanner(System.in);
+			int i;
+			i=s.nextInt();
+			int number=i;
+			int fact=1;
+				while(i>1) {
+					fact*=i;
+					i--;
+				}
+	  System.out.println("factorial of "+number+" is "+fact);
+
+
+  do while : set of code will get executed atleast once
+              exit level loop
+		Syntax:
+		            do {
+					       block;
+					   } while(condition)
+   Example :
+        Scanner scn = new Scanner(System.in);
+        int x;
+        x=scn.nextInt();
+        do {
+            System.out.println(x);
+            x++;
+        }while(x<=10); // statement
+   
+   for
+        for(initialization; condition; increment/ decrement) {
+		        block;
+		 }
+   
+       for(i=1; i<=10; i++)
+           System.out.print(i +" ");
+   
+   
+	   Nested Loop : Loop within another loop
+Example :	   
+	   int a =1;
+       for(int i=1; i<=5; i++)
+       {
+           for(int j=1;j<=i;j++){
+               System.out.print(a+" ");
+               a++;
+           }
+           System.out.println();
+       }
+
+	   
+4. break : break the execution of loop or block;
+
+    Example :
+	    for(int i=1; i<=25; i++) {
+           if(i == 10){
+               break;
+           }
+           System.out.print(i + " ");
+       }
+
+ continue: 
+   continues the iteration with the next incremeneted value.
+ 
+ Example:
+ 
+     for(int i=1; i<=25; i++) {
+           if(i == 10){
+               continue;
+           }
+           System.out.print(i + " ");
+       }
+
+
+
+5. Assignment release
+
+Working with Assignments:
+https://gitlab-cgi.stackroute.in/stack_java_cycle1_exercises/exercise-bt-operator-arithmeticoperator
+
+Step-1 : repo must be forked
+Step-2 : repo must be cloned
+Step-3 : create a directory
+Step-4 : cd dirctoryname
+Step-5 : git clone https://gitlab-cgi.stackroute.in/stack_java_cycle1_exercises/exercise-bt-operator-arithmeticoperator
+Step-6 : write codes
+Step-7 : Run the Testcases Locally
+Step-8 : push the code to remote repo
+Step-9 : submit the code on Hobbes
+
+System.exit(0)
+
+url for Hobbes
+
+hobbes-cgi@stackroute.in for submitting your Assignments
+
+1) https://gitlab-cgi.stackroute.in/stack_java_cycle1_exercises/exercise-bt-operator-arithmeticoperator.git
+2) https://gitlab-cgi.stackroute.in/stack_java_cycle1_exercises/exercise-bt-conditionalstatements-ifelse.git
+3) https://gitlab-cgi.stackroute.in/stack_java_cycle1_exercises/exercise-bt-loops-for-validatephonenumber.git
+
+Wednesday (19/08/2020)
+ 
+ Java Arrays
+ Strings
+ Wrapper Classes
+ 
+1. Control Structures using Java
+2. Iterations Using Java
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

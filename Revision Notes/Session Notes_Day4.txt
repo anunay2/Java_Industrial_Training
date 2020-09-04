@@ -1,0 +1,308 @@
+
+
+CGI - Pre-Onboarding - Java - Wave 3
+Today's Learning OutCome (17/08/2020)
+
+1. StandUp Call
+     
+	 Writing Algorithms - Done
+	 Drawing Flowcharts - Done
+	 Writing Pseudocode - Done
+	 
+2. Introduction to Java Programming
+  
+       Language 
+	             Binary Language  0,1
+				 Assembly / Machine Language Pneuonic symbols
+				 High Language 
+				    Basic : Beginners All-purpose Symbolic Instruction Code 
+					COBOL : Common Business Oriented Language (Business)
+					Fortran : Formula Translation ( Scientific Language)
+					C : used develop System Programming 
+				 Translators
+				       Interpretor : Compilation and execution happens at same time
+					   Compiler : Compiles and when it is error free can be
+					        executed.
+			Object Oriented Programming
+			           Data security is more focussed.
+					   C++, Java, C# etc.
+
+Java Language
+      
+	  was developed by James Gosling and Patrick Noughton
+	  initially lanaguage was called as Oak.
+	  Later after some enhancements, Langauge was called as Java
+	  1995, commercial release of Java.
+
+Features
+
+      Java is object oriented.
+	  Java is robust, distributed
+	  Java is a programming Language
+	  Java supports Exception Handling
+	  Java supports Multithreading
+	  Java is platform independant
+
+Java Editions
+
+	J2SE : Java 2 Standard Edition : Core Java Concepts like 
+	                           String Handling, Collections, JDBC, Multithreading, Exceptions, 
+							   IOStreams, Net API, Swing, Applet
+	
+	J2EE : Java 2 Enterprise Edition : Web Application Using Java
+	                                     Servlets, JSP, EJB
+	
+	J2ME : Java 2 Mobile Edition : Andriod Applications
+	
+JDK, JRE, JVM
+
+JDK : Java Development Kit
+      
+	  It is a tool used for installing and working with Java Programs
+
+JRE : Java Runtime Environment
+   
+      Java codes are executed only this platform
+	  JRE is provided by JVM
+	  
+Java Compiler : javac 
+               
+			   sourcecode --------> bytecode ---------> nativecode ---> executions starts
+			   
+JVM : Java Virtual Machine
+      
+	  This machine is provided by OS (Windows, Linux, MacOS)
+	  
+Parts of JVM
+
+	  Class Loader : Loads the class due for execution from the 
+	                 secondary storage to RAM (primary memory)
+	  
+	  Bytecode Verifier : verifies all the codes are converted to byte code
+	  
+	  Just in Time Compiler (JIT) : converts the byte code into java Native 
+	                                 code
+	   
+	   Native code : Code that is used for interaction between the devices
+	   
+	  After all these steps it will provide an environment for java code
+	      to get executed (JRE).
+	
+3. Environment SetUP for Java
+
+     Steps in Installing JDK
+	
+	Step 1: Download JDK
+	Step 2: Install JDK
+	Step 3: Include JDK's "bin" Directory in the PATH
+	Step 4: Verify the JDK Installation
+	Step 5: Write a Hello-World Java Program
+	Step 5: Write a Hello-World Java Program
+
+4. IDE Walkthrough
+
+    
+
+5. package concepts
+   
+   Grouping the class
+   They are folders to store multiple classes accoring to classifications
+   We can organize similar classes are grouped together in a package.
+   
+
+6. Develop a simple Java code
+ a) Simple Java Code
+    class MyFirstjavaProgram {
+    public static void main(String args[]){
+	    System.out.println("Learning Java Programs");
+	}
+  }
+
+Name of the class : MyFirstjavaProgram
+Name of the method: main
+void : main method does not return any value
+Strings args[] : All values from the user is accepted only as Strings.
+static : method can be executed without an object
+public : access specifier
+
+shankar@BLR-STR-Shankar:~/cgi$ javac MyFirstjavaProgram.java
+shankar@BLR-STR-Shankar:~/cgi$ java  MyFirstjavaProgram
+Learning Java Programs
+
+
+  b) Using commandLine Arguments
+  
+    class CmdLineArgs {
+    public static void main(String args[]){
+	    int x, y , sum=0;
+		x = Integer.parseInt(args[0]);
+		y = Integer.parseInt(args[1]);
+		sum = x + y;
+		System.out.println("Sum of "+ x +"and " +y +" is "+ sum);
+		}
+}
+	
+shankar@BLR-STR-Shankar:~/cgi$ javac CmdLineArgs.java
+shankar@BLR-STR-Shankar:~/cgi$ java CmdLineArgs 67 89
+Sum of 67and 89 is 156
+
+7. Java Datatypes
+
+   Primitive Data types
+   
+   byte	  1 byte	Stores whole numbers from -128 to 127
+   short  2 bytes	Stores whole numbers from -32,768 to 32,767
+   int	  4 bytes	Stores whole numbers from -2,147,483,648 to 2,147,483,647
+   long	  8 bytes	Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+   float  4 bytes	Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+   double 8 bytes	Stores fractional numbers. Sufficient for storing 15 decimal digits
+   boolean 1 bit	Stores true or false values
+   char	   2 bytes	Stores a single character/letter or ASCII values
+   
+   Secondary Data types
+   
+   Arrays   int x[] = new int[5]; int y[5]; y = new int[5];
+   Objects  Employee emp = new Employee("101", "Shankar");
+   Strings  String name ="Shubham"
+   
+ Variable :  
+             used to store values according to specified data types
+    
+8. Java Operators
+
+   Unary Operator : One operand before the operator
+   
+   ++	Increment	Increases the value of a variable by 1	++x	or x++
+   --	Decrement	Decreases the value of a variable by 1	--x or x--
+   
+   Binary Operator : Two operand between an operator
+   
+   Arithmetic operators
+	
+		+	Addition	Adds together two values	x + y	
+		-	Subtraction	Subtracts one value from another	x - y	
+		*	Multiplication	Multiplies two values	x * y	
+		/	Division	Divides one value by another	x / y	
+		%	Modulus	Returns the division remainder	x % y
+		
+   Assignment operators
+   
+   		int x = 10; or int x+=2; or int x*=5; 
+		
+   Comparison operators
+   	==	Equal to	x == y	
+   	!=	Not equal	x != y	
+	>	Greater than	x > y	
+	<	Less than	x < y	
+	>=	Greater than or equal to	x >= y	
+	<=	Less than or equal to	x <= y
+   
+   Logical operators
+       && 	Logical and	Returns true if both statements are true	
+	              x > 20 &&  x < 25	
+	   || 	Logical or	Returns true if one of the statements is true	
+	               x < 5 || x > 10	
+	   !	Logical not	Reverse the result, returns false if the result is true	
+	               !(x== 10)
+
+   Ternary Operator
+      Sytax :
+	        variable = (condition) ? expressionTrue :  expressionFalse;
+			
+      Ex :
+	       int grade = 70;
+		   String result = (time >= 60) ? "Pass" : "Fail";
+		   System.out.println(result);
+
+  Typecasting : conversion of one datatype to another
+  
+  Widening Casting (automatically or Implicit Casting ) - converting a smaller type to a larger type size
+       byte -> short -> char -> int -> long -> float -> double
+
+    int myInt = 23;
+    double myDouble = myInt; // Automatic casting: int to double
+
+
+   Narrowing Casting (manually) - converting a larger type to a smaller size type
+       double -> float -> long -> int -> char -> short -> byte
+
+ Ex:
+       double myDouble = 45.65;
+       int myInt = (int) myDouble;
+	   
+
+9. Demo codes for the above concepts
+
+
+urls:
+   
+    To download jdk11
+		https://www.oracle.com/java/technologies/javase-jdk11-downloads.html
+		
+    Steps in Installing JDK
+	
+	Step 1: Download JDK
+	Step 2: Install JDK
+	Step 3: Include JDK's "bin" Directory in the PATH
+	Step 4: Verify the JDK Installation
+	Step 5: Write a Hello-World Java Program
+	Step 5: Write a Hello-World Java Program
+	
+	Follow these url for Installing jdk
+      https://www.ntu.edu.sg/home/ehchua/programming/howto/JDK_HowTo.html
+	  
+	Select Start, select Control Panel. double click System, and select the Advanced tab.
+    Click Environment Variables. In the section System Variables, 
+	find the PATH environment variable and select it. 
+	Click Edit. If the PATH environment variable does not exist, click New.
+     
+	In the Edit System Variable (or New System  Variable) window, 
+	 specify the value of the PATH environment variable. 
+	 Click OK. Close all remaining windows by clicking OK.
+	  
+	The CLASSPATH variable is one way to tell applications, including the JDK tools, 
+	where to look for user classes. 
+	(Classes that are part of the JRE, JDK platform, and extensions 
+	should be defined through other means, 
+	such as the bootstrap class path or the extensions directory.)
+	
+IDE : Integrated Devlopment Environment (Eclipse, NetBeans, IntelliJ, SpringToolSuite 4.x, 
+                                           VisualStudio Code 4.x)
+	
+To Install IntelliJ Community Edition (IDE for Java programs)
+	
+	  Windows OS : https://www.jetbrains.com/help/idea/installation-guide.html
+	  Ubuntu : https://linuxize.com/post/how-to-install-intellij-idea-on-ubuntu-18-04/
+		
+		
+c:\programfiles\java\jdk\bin
+    folder that contains all java related executable like
+	      javac.exe, java.exe
+
+
+c:\cgi\javaprograms 
+
+  All the source codes are present in above folder
+            sample.java
+            s2.java
+            condition.java
+			
+Such settings are not supported in Linux, By defualt jdk is globally configured.
+
+
+Assignment url
+
+
+Tuesday (18/08/2020)
+ 
+1. Control Structures using Java
+2. Iterations Using Java
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
